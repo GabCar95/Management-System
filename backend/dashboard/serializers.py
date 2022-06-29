@@ -52,4 +52,4 @@ class CustomerSerializer(serializers.ModelSerializer):
 class CustomerViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
-        fields = ['id', 'first_name', 'last_name', 'phone', 'email']
+        fields = '__all__'

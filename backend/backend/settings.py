@@ -23,9 +23,9 @@ import os
 SECRET_KEY = 'django-insecure-^@207ejnvh!bal8l&c&7h%2-i%5$(w##+b6z60&587jc3yqa&w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'maintmanagementsystem.herokuapp.com']
 
 
 # Application definition
@@ -85,6 +85,7 @@ SIMPLE_JWT = {
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -123,8 +124,16 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
+        
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'mms_1',
+        # 'USER': 'GabrielCaraballo',
+        # 'PASSWORD': os.environ.get('DB_PASS'),
+        # 'HOST': 'database-1.ce76isrefqck.us-west-1.rds.amazonaws.com',
+        # 'PORT': 5432
     }
 }
 
@@ -169,9 +178,14 @@ STATICFILES_DIRS = [
     BASE_DIR / 'frontend/build/static',
 ]
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+

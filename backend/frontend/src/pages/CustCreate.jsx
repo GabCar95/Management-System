@@ -26,7 +26,7 @@ function CustCreate() {
  
      function create(e) {
          e.preventDefault()
-         authAxios.post('http://127.0.0.1:8000/api/customer/',{
+         authAxios.post('https://maintmanagementsystem.herokuapp.com/api/customer/',{
             
              first_name: first_name,
              last_name: last_name,
@@ -42,30 +42,30 @@ function CustCreate() {
      }
  
   return (
-    <div className='h-[91vh] bg-gray-300 flex justify-center pt-[80px]'>
-        <div className='w-[600px] h-[400px] bg-gray-100 rounded-md'>
+    <div className='h-[91vh] bg-[#E5E5E5] flex justify-center pt-[80px]'>
+        <div className='w-[600px] h-[400px] bg-white rounded-md'>
             {/* id, first_name, last_name, phone, email, date_created */}
-            <h1 className='font-bold text-gray-600 text-2xl text-center mt-3'>Create Customer:</h1>
+            <h1 className='font-bold text-[#222831] text-2xl text-center mt-3'>Create Customer<span className='text-[#FF5722]'>:</span></h1>
             <form>
-                <div className='flex grid-cols-2 p-2 justify-around mt-[80px] font-bold text-gray-600'>
+                <div className='flex grid-cols-2 p-2 justify-around mt-[80px] font-bold text-[#222831]'>
                     <div className='grid'>                        
                         <label className='pt-4'>First Name:</label>
-                        <input onChange={(e) => setFirst_name(e.target.value)} type='text' name='first_name'  value={first_name}/>
+                        <input className='border-b-2 border-gray-300' onChange={(e) => setFirst_name(e.target.value)} type='text' name='first_name'  value={first_name}/>
 
                         <label className='pt-4'>Last Name:</label>
-                        <input onChange={(e) => setLast_name(e.target.value)} type='text' name='last_name' value={last_name}/>
+                        <input className='border-b-2 border-gray-300' onChange={(e) => setLast_name(e.target.value)} type='text' name='last_name' value={last_name}/>
                     </div>
 
                     <div className='grid'>
                         <label className='pt-4'>Phone:</label>
-                        <input onChange={(e) => setPhone(e.target.value)} type='text' name='phone' value={phone}/>
+                        <input className='border-b-2 border-gray-300' onChange={(e) => setPhone(e.target.value)} type='text' name='phone' value={phone}/>
 
                         <label className='pt-4'>Email:</label>
-                        <input onChange={(e) => setEmail(e.target.value)} type='text' name='email' value={email}/>
+                        <input className='border-b-2 border-gray-300' onChange={(e) => setEmail(e.target.value)} type='text' name='email' value={email}/>
                     </div>
                     
                 </div>
-                <button onClick={create} className='font-bold text-gray-600 bg-yellow-400 rounded-md py-1 px-6 inline text-center mt-2 ml-[250px]'>Submit</button>
+                <button onClick={create} className='font-bold text-white bg-[#393E46] rounded-md py-1 px-6 inline text-center mt-2 ml-[250px]'>Submit</button>
             </form>
         </div>
     </div>

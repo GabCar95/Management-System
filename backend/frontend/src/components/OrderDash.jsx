@@ -16,7 +16,7 @@ function OrderDash() {
   useEffect(() => {
 
       async function fetchOrders(){
-          const { data } = await authAxios.get('http://127.0.0.1:8000/api/maintenance/')
+          const { data } = await authAxios.get('https://maintmanagementsystem.herokuapp.com/api/maintenance/')
           setOrders(data)
           
       }
@@ -49,19 +49,19 @@ function OrderDash() {
   return (
     <div className='flex grid-cols-3 justify-around py-[60px]'>
 
-        <div className='h-[150px] w-[300px] bg-yellow-400 text-center border-2 border-white rounded-xl py-8'>
-            <h1 className='font-bold text-gray-600 text-3xl'>Active Orders</h1>
-            <h2 className='font-bold text-3xl text-gray-600 py-2'>{numActive}</h2>
+        <div className='h-[150px] w-[300px] bg-[#393E46] text-center border-2 border-[#222831] rounded-xl py-8'>
+            <h1 className='font-bold text-white text-3xl'>Active Orders</h1>
+            <h2 className='font-bold text-3xl text-white py-2'>{numActive}</h2>
         </div>
 
-        <div className='h-[150px] w-[300px] bg-yellow-400 text-center border-2 border-white rounded-xl py-8'>
-            <h1 className='font-bold text-gray-600 text-3xl'>Completed Orders</h1>
-            <h2 className='font-bold text-3xl text-gray-600 py-2'>{numComplete}</h2>
+        <div className='h-[150px] w-[300px] bg-[#393E46] text-center border-2 border-[#222831] rounded-xl py-8'>
+            <h1 className='font-bold text-white text-3xl'>Completed Orders</h1>
+            <h2 className='font-bold text-3xl text-white py-2'>{numComplete}</h2>
         </div>
 
-        <div className='h-[150px] w-[300px] bg-yellow-400 text-center border-2 border-white rounded-xl py-8'>
-            <h1 className='font-bold text-gray-600 text-3xl'>Total Orders</h1>
-            <h2 className='font-bold text-3xl text-gray-600 py-2'>{numOrders}</h2>
+        <div className='h-[150px] w-[300px] bg-[#393E46] text-center border-2 border-[#222831] rounded-xl py-8'>
+            <h1 className='font-bold text-white text-3xl'>Total Orders</h1>
+            <h2 className='font-bold text-3xl text-white py-2'>{numOrders}</h2>
         </div>
 
     </div>

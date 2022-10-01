@@ -10,7 +10,7 @@ function Dashview() {
    
 
   return (
-    <div className='h-[91vh] bg-gray-300'>
+    <div className='h-[100vh] bg-[#E5E5E5]'>
         {/* Order numbers */}
         <div>
             <OrderDash />
@@ -19,7 +19,7 @@ function Dashview() {
         <div className='flex grid-cols-5'>
 
             {/* Customer info */}
-            <div className='w-[33%] pr-2'>
+            <div className='w-[36%] '>
                 <CustDash />
             </div>
 

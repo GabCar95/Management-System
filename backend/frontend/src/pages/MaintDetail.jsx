@@ -33,7 +33,7 @@ function MaintDetail() {
     useEffect(() => {
 
         async function fetchMaintenance(){
-            const { data } = await authAxios.get(`http://127.0.0.1:8000/api/maintenance/${maintenance_id.id}`)
+            const { data } = await authAxios.get(`https://maintmanagementsystem.herokuapp.com/api/maintenance/${maintenance_id.id}`)
             setId(data.id)
             setStatus(data.status)
             setTune(data.tune)
@@ -54,7 +54,7 @@ function MaintDetail() {
 
     function update(e) {
         e.preventDefault()
-        authAxios.put(`http://127.0.0.1:8000/api/maintenance/${maintenance_id.id}`,{
+        authAxios.put(`https://maintmanagementsystem.herokuapp.com/api/maintenance/${maintenance_id.id}`,{
            
             status: status,
             tune: tune,
@@ -77,12 +77,12 @@ function MaintDetail() {
 
 
   return (
-    <div className='h-[91vh] bg-gray-300 flex justify-center pt-[80px]'>
-        <div className='w-[600px] h-[500px] bg-gray-200 rounded-md'>
+    <div className='h-[91vh] bg-[#E5E5E5] flex justify-center pt-[80px]'>
+        <div className='w-[600px] h-[500px] bg-white rounded-md'>
             {/* order, employee, status, tune, description, totalCost, paid, passInspection, truckInShop, truckOutShop */}
-            <h1 className='font-bold text-gray-600 text-2xl text-center mt-3'>Order#: {order}</h1>
+            <h1 className='font-bold text-[#222831] text-2xl text-center mt-3'>Order<span className='text-[#FF5722]'>:</span> {order}</h1>
             <form>
-                <div className='flex grid-cols-2 p-4 justify-around mt-[80px] font-bold text-gray-600'>
+                <div className='flex grid-cols-2 p-4 justify-around mt-[80px] font-bold text-[#222831]'>
                     {/* left col */}
                     <div className='grid'>
                         <div>
@@ -99,7 +99,7 @@ function MaintDetail() {
                     
                         <div className='pt-4'>
                             <label>Tune: </label>
-                            {tune ? (<input type='checkbox' name='tune' checked/>): (<input type='checkbox' name='tune'/>)}
+                            {tune ? (<input class='checkmark' type='checkbox' name='tune' checked/>): (<input  type='checkbox' name='tune'/>)}
                             
                         </div>
 
@@ -140,7 +140,7 @@ function MaintDetail() {
                     </div>
                     
                 </div>
-                <button onClick={update} className='font-bold text-gray-600 bg-yellow-400 rounded-md py-1 px-6 inline text-center mt-2 ml-[250px]'>Update</button>
+                <button onClick={update} className='font-bold text-white bg-[#393E46] rounded-md py-1 px-6 inline text-center mt-2 ml-[250px]'>Update</button>
             </form>
         </div>
     </div>

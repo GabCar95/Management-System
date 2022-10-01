@@ -19,7 +19,7 @@ function CustDash() {
     useEffect(() => {
 
         async function fetchCustomers(){
-            const { data } = await authAxios.get('http://127.0.0.1:8000/api/customer/')
+            const { data } = await authAxios.get('https://maintmanagementsystem.herokuapp.com/api/customer/')
             setCustomers(data)
             
         }
@@ -29,9 +29,9 @@ function CustDash() {
     }, [])
     
   return (
-    <div className='h-[500px] bg-gray-100 rounded-lg px-2'>
-        <h1 className='font-bold text-gray-600 text-3xl'>Customers</h1>
-        <Link to="/customer/create" className='font-bold text-gray-600 bg-yellow-400 rounded-md py-1 px-6 ml-[25%] inline text-center'>Create Customer</Link>
+    <div className='h-[400px] bg-white rounded-lg px-2'>
+        <h1 className='font-bold text-[#FF5722] text-3xl border-b-2 border-[#222831] inline'>Customers</h1>
+        <Link to="/customer/create" className='font-bold text-white bg-[#393E46] rounded-md py-1 px-6 ml-[25%] inline text-center'>Create Customer</Link>
 
         <div className='flex grid-cols-3 justify-between p-2'>
             {/* view */}
@@ -41,12 +41,12 @@ function CustDash() {
 
             {/* Customer */}
             <div>
-                <h1 className='font-bold text-gray-600 text-xl'>Customer</h1>
+                <h1 className='font-bold text-[#222831] text-xl'>Customer</h1>
             </div>
 
             {/* Phone */}
             <div>
-                <h1 className='font-bold text-gray-600 text-xl mr-10'>Phone</h1>
+                <h1 className='font-bold text-[#222831] text-xl mr-10'>Phone</h1>
             </div>
 
         </div>

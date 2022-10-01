@@ -17,7 +17,7 @@ function MaintDash() {
     useEffect(() => {
 
         async function fetchMaintenance(){
-            const { data } = await authAxios.get('http://127.0.0.1:8000/api/maintenance/')
+            const { data } = await authAxios.get('https://maintmanagementsystem.herokuapp.com/api/maintenance/')
             setMaintenance(data)
             
         }
@@ -26,28 +26,28 @@ function MaintDash() {
         // console.log(maintenance)
     }, [])
   return (
-    <div className='h-[500px] bg-gray-100 rounded-lg'>
-        <h1 className='font-bold text-gray-600 text-3xl'>Maintenance</h1>
+    <div className='h-[400px] bg-white rounded-lg'>
+        <h1 className='font-bold text-[#FF5722] text-3xl border-b-2 border-[#222831] inline ml-2'>Maintenance</h1>
 
         <div className='grid grid-cols-5 p-4'>
             {/* Order# */}
             <div>
-                <h1 className='font-bold text-gray-600 text-xl'>Order #</h1>
+                <h1 className='font-bold text-[#222831] text-xl'>Order #</h1>
             </div>
 
             {/* Date Created */}
             <div>
-                <h1 className='font-bold text-gray-600 text-xl'>Date Created</h1>
+                <h1 className='font-bold text-[#222831] text-xl'>Date Created</h1>
             </div>
 
             {/* Date Complete */}
             <div>
-                <h1 className='font-bold text-gray-600 text-xl'>Date Complete</h1>
+                <h1 className='font-bold text-[#222831] text-xl'>Date Complete</h1>
             </div>
 
             {/* Status */}
             <div>
-                <h1 className='font-bold text-gray-600 text-xl'>Status</h1>
+                <h1 className='font-bold text-[#222831] text-xl'>Status</h1>
             </div>
 
             {/* view */}

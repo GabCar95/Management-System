@@ -18,7 +18,7 @@ function MaintenanceView() {
      useEffect(() => {
  
          async function fetchMaintenance(){
-             const { data } = await authAxios.get('http://127.0.0.1:8000/api/maintenance/')
+             const { data } = await authAxios.get('https://maintmanagementsystem.herokuapp.com/api/maintenance/')
              setMaintenance(data)
              
          }
@@ -29,11 +29,11 @@ function MaintenanceView() {
      
 
   return (
-    <div className='h-[91vh] bg-gray-300 flex justify-center'>
+    <div className='h-[91vh] bg-[#E5E5E5] flex justify-center'>
         <div className='w-[1200px] h-full bg-gray-100 rounded-md'>
             {/* order, employee, status, tune, description, totalCost, paid, passInspection, truckInShop, truckOutShop */}
             {maintenance.map(maintenance => (
-                <div className='w-[1200px] flex grid-cols-4 justify-around py-4 border-b-2 border-gray-300 font-semibold text-gray-800'>
+                <div className='w-[1200px] pl-[100px] grid grid-cols-4 justify-around py-4 border-b-2 border-gray-300 font-semibold text-[#222831]'>
                     <div>
                         <p>Order#: {maintenance.order}</p>
                         <p>Status: {maintenance.status}</p>
@@ -50,7 +50,7 @@ function MaintenanceView() {
                     </div>
 
                     <div className='pt-4'>
-                        <Link to={"/maintenance/" + maintenance.id} className='bg-yellow-400 rounded-md px-2'>View</Link>
+                        <Link to={"/maintenance/" + maintenance.id} className='bg-[#393E46] text-white rounded-md py-1 px-2'>View</Link>
                     </div>
 
                 </div>
